@@ -48,7 +48,7 @@ public class PlayerMove : MonoBehaviour
             }
             if (comingDown == true)
             {
-                transform.Translate(Vector3.up * Time.deltaTime * -1, Space.World);
+                transform.Translate(Vector3.up * Time.deltaTime * -1.9f, Space.World);
             }
 
         }
@@ -60,7 +60,7 @@ public class PlayerMove : MonoBehaviour
         float initialHeight = transform.position.y;
         yield return new WaitForSeconds(.45f);
         comingDown = true;
-        yield return new WaitForSeconds(.7f);
+        yield return new WaitForSeconds(.65f); //.7f
         isJumping = false;
         comingDown = false;
         playerObject.GetComponent<Animator>().Play("Run");
